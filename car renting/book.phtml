@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  </head>
+
+  <style>
+
+    h1{
+      font-family: 'montserrat';
+      position: relative;
+      top:10rem;
+    }
+
+
+    .card{
+      margin-top: 8rem;
+    }
+
+    .card-img-top{
+      padding: 25px;
+      transition: transform .5s;
+
+    }
+
+    .button{
+      float: right;
+    }
+
+    .card{
+      background-color: #f5f5f5;
+      border-style: none !important;
+    }
+
+    hr{
+      border-color: #dbdbdb;
+    }
+
+    .card-text{
+      font-weight: bold;
+    }
+
+    .card-img-top:hover{
+      transform: scale(1.1);
+    }
+
+    @media (min-width: 1024px) and (max-width: 2000px){
+      .car-section{
+        margin: 5rem !important;
+      }
+    }
+
+
+     /* Navbar section */
+
+     .navbar{
+      position: fixed;
+      width: 100%;
+      background: #23393d !important;
+      box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25);
+      transition: .6s;
+      z-index: 10;
+    }
+
+    .logo-one{
+      height:50px; 
+      margin: 10px 50px 10px;
+    }
+
+    .navbar-nav{
+      font-family: 'montserrat';
+      font-weight: bold;
+    }
+
+    .nav-link{
+      margin-right: 10px;
+      color: #fff !important;
+    }
+
+    .nav-link:hover{
+      color: #F0c540 !important;
+    }
+
+    nav.sticky{
+      margin-right: 5px;
+    }
+
+    @media (max-width:768px){
+
+      .navbar{
+        z-index: 10;
+      }
+
+      .navbar-brand .logo-one{
+        margin-left: 5px !important;
+        height: 40px;
+      }
+
+      .icons{
+        margin-bottom: 1rem;
+      }
+
+      .row{
+        margin: 1rem;
+        margin-top: 2rem;
+      }
+
+      h1{
+        font-size: 1.8rem;
+        top:8rem;
+      }
+
+
+    }
+
+      /* footer section */
+      footer{
+        background: #273f44;
+        color: #fff;
+        font-family: 'montserrat';
+      }
+      .logo2{
+        height:50px; 
+        margin:30px 20px 5px;
+      }
+
+      .content1{
+        margin:20px;
+        font-size: 16px;
+        line-height: 25px;
+        
+      }
+
+      .content2{
+        margin-top: 50px;
+        margin-left: 30px;
+        font-weight: bold;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        display: inline-block;
+        font-family: 'open sans';
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
+
+      .icons{
+        margin-left: 14%;
+        margin-top: 4%;
+      }
+
+      .icons .icon-link{
+        color: #fff;
+        margin-right: 10px;
+      }
+
+      .footer2{
+        background: #333;
+        color: grey;
+        padding: 3px;
+        text-align: center;
+        font-family: 'open sans';
+      }
+
+
+  </style>
+  <body>
+  
+
+ <!--- c'est la partie dynamique---->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img class="logo-one" src="https://motors.stylemixthemes.com/rent-a-car/wp-content/uploads/sites/7/2017/01/motors_car_rental_logo.svg" alt="logo one">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <?php if(!isset($_SESSION['id'])): ?>
+          <li class="nav-item dropdown">
+                <a href="authentification.php" class="nav-link" style="color: white;">Authentification</a>
+        </li>
+        <?php  endif; ?>
+          <li class="nav-item active">
+            <a class="nav-link" href="index.phtml" style="color: #F0c540 !important;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="book.html">Book Now</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.phtml#abo">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#con">Contact Us</a>
+          </li>
+          
+          <?php if(isset($_SESSION['id'])): ?>
+         <li class="nav-item dropdown">
+                <a href="logout.php" class="nav-link" style="color: white;">Logout</a>
+        </li>
+        <?php  endif; ?>
+        </ul>
+      </div>
+    </nav>
+
+    <h1 class="text-center"> List of Car </h1>
+
+    <div class="container py-4 px-3">
+    <a href="ajoutcar.php" class="btn btn-primary button" style="float: right; margin-top: 50px; margin-right: 10px; "> <i class="bi bi-folder-plus"></i> Ajouter un Car </a>
+
+  <div class="row">
+    <?php foreach ($cls as $row) : ?>
+      <div class="col-lg-4 mb-5">
+    <div class="card shadow rounded d-flex h-70">
+        <div class="card-body">
+           
+            <img src="images/<?= $row['image'] ?>" class="card-img-top" alt="Car Image">
+        </div>
+        <div class="container y-4 y-3 flex-fill">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td><strong>Marque :</strong> <?= $row['marque'] ?></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Modèle :</strong> <?= $row['model'] ?></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a  href="detailcar.php?imatriculation=<?php echo $row['imatriculation'] ?>" class="btn btn-secondary"><i class="bi bi-info-circle"></i></a>
+                            <a href="detailcar.php?imatriculation=<?php echo $row['imatriculation'] ?>" type="button" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                             <!---->
+                            <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal<?=$row['imatriculation']?>">
+<i class="bi bi-trash3"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal<?=$row['imatriculation']?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+    
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Do You Wanna Delete <?= $row['marque']; ?>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="./deletecar.php?imatriculation=<?=$row['imatriculation']?>">
+            <button type="button" class="btn btn-danger">Delete</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+                          </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+    <?php endforeach; ?>
+</div>
+
+
+
+</div>
+
+
+
+
+
+    <footer>
+      <div class="footer-top" id="con">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <a href="#">
+                <img class="logo2" src="https://motors.stylemixthemes.com/rent-a-car/wp-content/uploads/sites/7/2017/01/motors_car_rental_logo.svg" alt="logo two">
+              </a>
+              <p class="content1">
+                Best cars at low cost.
+              </p>
+            </div>
+
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <h6 class="content2">SOCIAL MEDIA</h6>
+              <div class="icons">
+                <a class="icon-link" href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a class="icon-link" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a class="icon-link" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                <a class="icon-link" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a><br>
+                <i class="fa fa-envelope" aria-hidden="true"><span style="font-family: 'montserrat';">&nbsp;&nbsp;moters@customer.in</span></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer2">
+          &copy;2020 <span style="font-family: 'montserrat';">Motors.</span>
+          All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  </body>
+</html>
